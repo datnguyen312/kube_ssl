@@ -1,6 +1,7 @@
 # Kubernetes SSL Approver
 
 # Diagram
+![alt text](https://raw.githubusercontent.com/suker200/kube_ssl/master/k8s-ssl-approver.png)
 
 # Reason
 - deploy kubernetes via kubeadm when using ssl mode, the ssl cert must be created and configured with IPSAN to avoid in breaking tls verification (metrics-server etc.)
