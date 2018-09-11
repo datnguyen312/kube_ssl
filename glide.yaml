@@ -1,0 +1,10 @@
+package: kube_ssl
+import:
+- package: k8s.io/kubernetes
+  version: release-1.11
+- package: k8s.io/client-go/kubernetes
+  version: release-9.0
+- package: k8s.io/api/admissionregistration/v1alpha1
+  version: 0527d9f2238346a310e6cf1e6afe2422f329cc3d
+- package: k8s.io/apimachinery/pkg/apis/meta/v1
+  version: 63dd81ab0848cd58da3257a806f599808708029c
