@@ -13,28 +13,28 @@
 - On the new node worker with cfssl installed
   + 
   ```
-cat <<EOF | cfssl genkey - | cfssljson -bare server
-{
-  "hosts": [
-    "192.168.33.13"
-  ],
-  "CN": "192.168.33.13",
-  "key": {
-    "algo": "ecdsa",
-    "size": 256
-  }
-}
-EOF
+	cat <<EOF | cfssl genkey - | cfssljson -bare server
+	{
+	  "hosts": [
+	    "192.168.33.13"
+	  ],
+	  "CN": "192.168.33.13",
+	  "key": {
+	    "algo": "ecdsa",
+	    "size": 256
+	  }
+	}
+	EOF
   ```
   +
   ``` 
-  cat > server.json << EOF 
-{
-	"nodename": "192.168.33.13",
-	"nodeip": "192.168.33.13",
-	"csrdata": $(cat server.csr) |base64 | tr -d "\n"
-}
-EOF
+	cat > server.json << EOF 
+	{
+		"nodename": "192.168.33.13",
+		"nodeip": "192.168.33.13",
+		"csrdata": $(cat server.csr) |base64 | tr -d "\n"
+	}
+	EOF
   ```
   + curl  -H "Content-Type: application/json" -X POST --data @server.json http://127.0.0.1:9999/v1/request > server.crt
 
