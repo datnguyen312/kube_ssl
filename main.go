@@ -4,6 +4,7 @@ import (
 	// "flag"
     "io"
     "log"
+    "os"
 	// "fmt"
 	"time"
 	"net/http"
@@ -178,6 +179,7 @@ func request(c *gin.Context) {
 }
 
 func main() {
+	Init(ioutil.Discard, os.Stdout, os.Stdout, os.Stderr)
 	Config = OutClusterConfig()
 	// go csrApprover()
 
